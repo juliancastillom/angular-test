@@ -1,0 +1,44 @@
+<div class="mt-3 container content">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <span class="anchor" id="formLogin"></span>
+      <!-- form	card	login	with	validation	feedback	-->
+      <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h4 class="mb-0">Nueva tarea</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="descripcion">Descripción</label>
+              <input
+                type="text"
+                class="form-control"
+                id="descripcion"
+                placeholder="Ingresar descipción..."
+                #descripcion
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="guardar(descripcion.value)"
+            >
+              Guardar!
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="mb-3" />
+  <div class="mb-5 h-100 align-self-center text-center">
+    <h3>Lista de tareas</h3>
+  </div>
+  <div class="row row-flex">
+    <app-item-todo
+      *ngFor="let item of lista"
+      [descripcion]="item"
+    ></app-item-todo>
+  </div>
+</div>
